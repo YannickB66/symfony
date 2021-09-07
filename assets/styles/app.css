@@ -1,0 +1,76 @@
+.logo{
+    width: 100px;
+}
+
+nav{
+    color: red;
+}
+
+.banner{
+    border: solid 1px rgba(229, 220, 172, 0.76);
+}
+
+.navbar{
+    background: linear-gradient(#860e0e, #d34444);
+    box-shadow: 0 10px 20px #0a0a0a;
+}
+
+.navbar-light{
+    font-family: "Lucida Console", monospace, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.fond{
+    background-color: rgba(225, 225, 225, 0.59);
+}
+
+.container-lg{
+    background-color: rgba(194, 192, 172, 0.26);
+}
+
+.titre{
+   padding: 50px;
+    font-family: "Lucida Console", monospace, sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.centre{
+    text-align: center;
+}
+
+
+.div-text{
+    align-self: center;
+    font-family: "Lucida Console", monospace, sans-serif;
+}
+
+.div-image{
+    justify-content: center;
+}
+
+.page1-text{
+    text-align: justify;
+    }
+
+.page1-img{
+    width: 500px;
+    height: auto;
+}
+
+.d1{
+    background-color: #0d278a;
+}
+
+.d2{
+    background-color: #b2cdfa;
+}
+
+.grid-name{
+    font-weight: bold;
+    font-family: "Lucida Console", monospace, sans-serif;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmNzcyIsIm1hcHBpbmdzIjoiQUFBQTtJQUNJLDJCQUEyQjtBQUMvQiIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zdHlsZXMvYXBwLmNzcyJdLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGdyYXk7XG59XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/

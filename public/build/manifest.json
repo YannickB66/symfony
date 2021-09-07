@@ -1,0 +1,13 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js",
+  "build/LogoKGB.png": "/build/LogoKGB.png",
+  "build/kgb-book.jpg": "/build/kgb-book.jpg",
+  "build/id_KGB.jpg": "/build/id_KGB.jpg",
+  "build/kgb-mural.jpg": "/build/kgb-mural.jpg",
+  "build/forces.png": "/build/forces.png",
+  "build/Ybruel-logo.jpg": "/build/Ybruel-logo.jpg",
+  "build/Ybruel-logo.png": "/build/Ybruel-logo.png"
+}

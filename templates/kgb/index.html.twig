@@ -1,0 +1,57 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Hello KGBController!{% endblock %}
+
+{% block body %}
+
+    <div class="container-lg centre" >
+
+        <div class="row banner" style="background-image: url({{ asset('build/kgb-mural.jpg') }})">
+            <h1 class="titre">Secret Agent : KGB</h1>
+        </div>
+
+
+
+        <div class="row p-3">
+
+            <div class="col-12 col-md-5 div-text">
+            <h2>
+                Catalogue des missions
+            </h2>
+               <div class="page1-text">
+                   Ce site est conçu pour répertorier et regrouper toutes les missions anciennes ou en cour du KGB.
+                   Vous trouverez dans la section <b>LES MISSIONS</b> toutes les informations nécessaires.
+                   Que ce soit pour trouver un agent ou une cible en particulier.
+                   Vous trouverez également tout un tas d'autres informations.
+               </div>
+
+            </div>
+
+            <div class="col-12 col-md-7 div-image"> <img class="page1-img" src="{{ asset('build/id_kgb.jpg') }}" alt="Livre secret du kgb"> </div>
+
+        </div>
+
+
+        <div class="row p-3">
+
+            <div class="col-12 col-md-3 order-1 order-md-0 div-image"> <img class="" src="{{ asset('build/forces.png') }}" alt="Livre secret du kgb"> </div>
+
+            <div class="col-12 col-md-9 order-0 order-md-1 div-text">
+                <h2>
+                    Nasha istoriya
+                </h2>
+                <div class="page1-text">
+                    Le KGB a su tisser un des plus importants réseaux internationaux d’agents capables d’infiltrer énormément de milieux, qu'ils soient intellectuels, politiques (notamment dans les partis communistes d’Europe), religieux, militaires, maçonniques, étudiants, industriels.
+                    Pendant la guerre froide, le KGB chercha à contrôler, intimider voire liquider les dissidents politiques accusés de « subversion idéologique », tels Alexandre Soljenitsyne ou Andreï Sakharov. Il obtint également des succès remarquables dans l'espionnage, comme la récolte continue de technologie occidentale par ses agents
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+{% endblock %}
