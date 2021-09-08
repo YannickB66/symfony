@@ -1,6 +1,6 @@
 {% extends 'basekgb.html.twig' %}
 
-{% block title %}Hello MissionController!{% endblock %}
+{% block title %}Les missions{% endblock %}
 
 {% block body %}
 
@@ -10,28 +10,36 @@
         </h1>
     </div>
 
-    <div class="container-lg text-center grid-name d1">
-        <div class="row">
-            <div class="col">
+    <div class="container-lg text-center font d1">
+        <div class="grid-name row">
+            <div class="col border ">
                 Nom de l'agent
             </div>
-            <div class="col">
+            <div class="col border">
                 prenom de l'agent
             </div>
-            <div class="col">
+            <div class="col border">
                 spécialité de l'agent
             </div>
         </div>
-    </div>
 
-
-    <ul>
         {% for agent in agents %}
-           <li> {{ agent.name }} </li>
+
+        <div class="row">
+            <div class="col border">
+                {{ agent.name }}
+            </div>
+            <div class="col border">
+                {{ agent.firstName}}
+            </div>
+            <div class="col border">
+                spec
+            </div>
+        </div>
+
         {% endfor %}
-    </ul>
 
-
+    </div>
 
 
 {% endblock %}

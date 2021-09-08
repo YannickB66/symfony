@@ -26,7 +26,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item p-1">
                             <a class="nav-link {% if controller_name == 'KGBController' %} active {% endif %}"
-                               aria-current="page" href="/kgb">
+                               href="/kgb">
                                 Acceuil
                             </a>
                         </li>
@@ -37,7 +37,8 @@
                             </a>
                         </li>
                         <li class="nav-item p-1">
-                            <a class="nav-link" href="#">Administration</a>
+                            <a class="nav-link {% if controller_name == 'AdminController' %} active {% endif %}"
+                               href="/kgb/admin">Administration</a>
                         </li>
                         <li class="nav-item p-1">
                             <a class="nav-link" href="#">A propos</a>
@@ -52,7 +53,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
         </body>
-    <div class="container">
+    <div class="container" style="padding-top:  100px">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
