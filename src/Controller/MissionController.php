@@ -12,6 +12,12 @@ class MissionController extends AbstractController
     #[Route('kgb/mission', name: 'mission')]
     public function index(): Response
     {
+        if(!session_id())
+        {
+            session_start();
+            session_regenerate_id();
+        }
+
         $agent = $this->getDoctrine()->getRepository(Agent::class)->findAll();
 
         return $this->render('kgb/mission/index.html.twig', [
