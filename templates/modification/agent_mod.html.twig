@@ -1,0 +1,72 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Administation{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-lg text-center p-5">
+        <h1>
+            Modifier {{ cat }}
+        </h1>
+    </div>
+
+
+    <div class="container-lg text-center font d1">
+
+
+        <form method="post">
+
+            {% if  cat  == 'name' %}
+            <label for="agent[name]">Modifier nom
+            <input name="agent[name]" type="text" value="{{ agent.name }}">
+            </label>
+            {% endif %}
+
+            {% if  cat  == 'firstName' %}
+                <label for="agent[firstName]">Modifier prénom
+                    <input name="agent[firstName]" type="text" value="{{ agent.firstName }}">
+                </label>
+            {% endif %}
+
+            {% if  cat  == 'cid' %}
+                <label for="agent[identificationCode]">Modifier code d'identification
+                    <input name="agent[identificationCode]" type="number" value="{{ agent.IdentificationCode }}">
+                </label>
+            {% endif %}
+
+            {% if  cat  == 'nationality' %}
+                <label for="agent[nationality]">Modifier nationalité
+                    <input name="agent[nationality]" type="text" value="{{ agent.nationality }}">
+                </label>
+            {% endif %}
+
+            {% if  cat  == 'speciality' %}
+                <select id="agent_speciality" name="agent[speciality][]" class="form-select" multiple>
+                    {% for speciality in specialitys %}
+                        <option value={{ speciality.id }}>{{ speciality.name }}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
+
+            {% if  cat  == 'birthdate' %}
+                <label for="agent[birthdate]">Modifier date de naissance
+                    <input name="agent[birthdate]" type="date">
+                </label>
+            {% endif %}
+
+
+
+        <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin/mod_agent/{{ agent.id }}">Retour</a></button>
+
+        <button type="submit" style="margin: 20px">valider</button>
+
+        </form>
+
+    </div>
+
+
+
+
+
+{% endblock %}

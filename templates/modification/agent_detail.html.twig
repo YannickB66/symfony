@@ -1,0 +1,71 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Administation{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-lg text-center p-5">
+        <h1>
+            Modifier un agent
+        </h1>
+    </div>
+
+
+    <div class="container-lg text-center font d1">
+        <div class="grid-name row">
+            <div class="col border ">
+                Nom
+            </div>
+            <div class="col border">
+                prenom
+            </div>
+            <div class="col border">
+                spécialité
+            </div>
+            <div class="col border">
+                code identification
+            </div>
+            <div class="col border">
+                nationalité
+            </div>
+            <div class="col border">
+                date de naissance
+            </div>
+        </div>
+
+
+
+            <div class="row">
+                <div class="col border">
+                    <a href="/kgb/admin/mod_agent/{{ agent.id }}/name">{{ agent.name }}</a>
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_agent/{{ agent.id }}/firstName">{{ agent.firstName }}</a>
+                </div>
+                <div class="col border">
+                    {% for speciality in agent.speciality %}
+                    <a href="/kgb/admin/mod_agent/{{ agent.id }}/speciality">{{ speciality.name }}</a>
+                    {% endfor %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_agent/{{ agent.id }}/cid">{{ agent.identificationCode}}</a>
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_agent/{{ agent.id }}/nationality">{{ agent.nationality}}</a>
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_agent/{{ agent.id }}/birthdate">{{ agent.birthdate|date("d/m/Y") }}</a>
+                </div>
+            </div>
+
+
+        <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin/mod_agent">Retour</a></button>
+
+    </div>
+
+
+
+
+
+{% endblock %}

@@ -2,18 +2,21 @@
 
 namespace App\Form;
 
-use App\Entity\Speciality;
+use App\Entity\Hideout;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SpecialityType extends AbstractType
+class HideoutType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+            ->add('code')
+            ->add('adress')
+            ->add('country')
+            ->add('type')
             ->add('save',SubmitType::class)
         ;
     }
@@ -21,7 +24,7 @@ class SpecialityType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Speciality::class,
+            'data_class' => Hideout::class,
         ]);
     }
 }

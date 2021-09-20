@@ -1,0 +1,51 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Administation{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-lg text-center p-5">
+        <h1>
+            Modifier un agent
+        </h1>
+    </div>
+
+
+    <div class="container-lg text-center font d1">
+        <div class="grid-name row">
+            <div class="col border ">
+                Nom de l'agent
+            </div>
+            <div class="col border">
+                prenom de l'agent
+            </div>
+            <div class="col border">
+                spécialité de l'agent
+            </div>
+        </div>
+
+        {% for agent in agents %}
+
+            <div class="row">
+                <div class="col border">
+                    <a href="/kgb/admin/mod_agent/{{ agent.id }}">{{ agent.name }}</a>
+                </div>
+                <div class="col border">
+                    {{ agent.firstName}}
+                </div>
+                <div class="col border">
+                    {% for speciality in agent.speciality %}
+                        <div> {{ speciality.name }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% endfor %}
+
+        <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin">Retour</a></button>
+
+    </div>
+
+
+{% endblock %}

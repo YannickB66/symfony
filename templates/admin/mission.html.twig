@@ -1,0 +1,184 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Administation{% endblock %}
+
+{% block body %}
+
+
+   <div class="container-lg text-center p-5">
+      <h1>
+         Nouvelle Missison
+      </h1>
+   </div>
+
+
+   <div class="container-lg p-5">
+      <form name="mission" method="post">
+         <div id="mission" class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="mission">
+
+               <div class="mb-3">
+                  <label for="mission_title" class="form-label required">Titre</label>
+                  <input type="text" id="mission_title" name="mission[title]" required="required" maxlength="255" class="form-control">
+               </div>
+
+               <div class="mb-3">
+                  <label for="mission_description" class="form-label required">Description</label>
+                  <textarea id="mission_description" name="mission[description]" required="required" class="form-control"></textarea>
+               </div>
+
+               <div class="mb-3">
+                  <label for="mission_codename" class="form-label required">Nom de Code</label>
+                  <input type="text" id="mission_codename" name="mission[codename]" required="required" maxlength="255" class="form-control">
+               </div>
+
+               <div class="mb-3">
+                  <label for="mission_statut" class="form-label required">Statut</label>
+                  <select id="mission_statut" name="mission[statut]" required="required" class="form-select">
+                     <option value="En cour">En cour</option>
+                     <option value="En Attente">En Attente</option>
+                     <option value="Annulée">Annulée</option>
+                     <option value="Terminée">Terminée</option>
+                  </select>
+
+               </div>
+
+               <div class="mb-3">
+                  <label for="mission_type" class="form-label required">Type</label>
+                  <input type="text" id="mission_type" name="mission[type]" required="required" maxlength="255" class="form-control">
+               </div>
+
+               <fieldset class="mb-3">
+                  <legend class="col-form-label required">Date de début</legend>
+                  <div id="mission_dateStart">
+
+                     <div class="visually-hidden">
+                        <label class="form-label required" for="mission_dateStart_year">Year</label>
+                        <label class="form-label required" for="mission_dateStart_month">Month</label>
+                        <label class="form-label required" for="mission_dateStart_day">Day</label>
+                     </div>
+
+                     <div class="input-group">
+                        <select id="mission_dateStart_month" name="mission[dateStart][month]" class="form-select">
+                           <option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option>
+                           <option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option>
+                           <option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option>
+                           <option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
+                        </select>
+                        <select id="mission_dateStart_day" name="mission[dateStart][day]" class="form-select">
+                           <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                           <option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                           <option value="9">9</option><option value="10">10</option><option value="11">11</option>
+                           <option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option>
+                           <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+                           <option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option>
+                           <option value="30">30</option><option value="31">31</option>
+                        </select><select id="mission_dateStart_year" name="mission[dateStart][year]" class="form-select">
+                           <option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option>
+                        </select>
+                     </div>
+
+                  </div>
+               </fieldset>
+
+               <fieldset class="mb-3">
+                  <legend class="col-form-label">Date de fin</legend>
+                  <div id="mission_dateEnd"><div class="visually-hidden">
+                        <label class="form-label required" for="mission_dateEnd_year">Year</label>
+                        <label class="form-label required" for="mission_dateEnd_month">Month</label>
+                        <label class="form-label required" for="mission_dateEnd_day">Day</label>
+                     </div>
+
+                     <div class="input-group">
+                        <select id="mission_dateEnd_month" name="mission[dateEnd][month]" class="form-select">
+                           <option value=null></option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
+                        </select>
+                        <select id="mission_dateEnd_day" name="mission[dateEnd][day]" class="form-select">
+                           <option value=null></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+                        </select>
+
+                        <select id="mission_dateEnd_year" name="mission[dateEnd][year]" class="form-select">
+                           <option value=null></option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option>
+                        </select>
+                     </div>
+                  </div>
+               </fieldset>
+
+               <div class="mb-3">
+                  <label for="mission_country" class="form-label required">Pays</label>
+                  <input type="text" id="mission_country" name="mission[country]" required="required" maxlength="255" class="form-control">
+               </div>
+
+               <div class="mb-3">
+
+                  <label class="form-label required" for="mission_agent">Agent</label>
+                  <select id="mission_agent" name="mission[agent][]" multiple class="form-select">
+                     {% for agent in agents %}
+                        <option value={{ agent.id }}>{{ agent.name }} {{ agent.firstName }}</option>
+                     {% endfor %}
+                  </select>
+
+
+               </div>
+
+               <div class="mb-3">
+                  <label class="form-label required" for="mission_requireSpeciality">Spécialité requise</label>
+                  <select id="mission_requireSpeciality" name="mission[requireSpeciality]" class="form-select">
+                     {% for speciality in specialitys %}
+                        <option value={{ speciality.id }}>{{ speciality.name }}</option>
+                     {% endfor %}
+                  </select>
+               </div>
+
+               <div class="mb-3">
+                  <label class="form-label" for="mission_hideout">Hideout</label>
+                  <select id="mission_hideout" name="mission[hideout][]" multiple class="form-select">
+                     <option value=null></option>
+                     {% for hideout in hideouts %}
+                        <option value={{ hideout.id }}>{{ hideout.country }} : {{ hideout.adress }}</option>
+                     {% endfor %}
+                  </select>
+               </div>
+
+               <div class="mb-3">
+                  <label class="form-label" for="mission_contact">Contact</label>
+                  <select id="mission_contact" name="mission[contact][]" multiple class="form-select">
+                     <option value=null></option>
+                     {% for contact in contacts %}
+                        <option value={{ contact.id }}>{{ contact.codename }}</option>
+                     {% endfor %}
+                  </select>
+               </div>
+
+               <div class="mb-3">
+                  <label class="form-label required" for="mission_target">Target</label>
+                  <select id="mission_target" name="mission[target][]" multiple class="form-select">
+                     {% for target in targets %}
+                        <option value={{ target.id }}>{{ target.codename }}</option>
+                     {% endfor %}
+                  </select>
+               </div>
+
+               <div class="mb-3">
+                  <button type="submit" id="mission_save" name="mission[save]" class="btn-primary btn">Enregistrer</button>
+               </div>
+               <input type="hidden" id="mission__token" name="mission[_token]" value="a4f6ed469723c906d.sNPOhRj7CUOTgPjvO2NdeZawoJMJe0_40EJbjSq-L9o.3Oe0tnGzRzX80oumfQkvG-_V4fE_ERm5lhU86Hvpf-_FiqTnILw8Iszajw">
+            </div>
+            <div class="col-md-3"></div>
+         </div>
+
+      </form>
+
+
+
+   </div>
+
+
+
+
+
+
+
+
+{% endblock %}

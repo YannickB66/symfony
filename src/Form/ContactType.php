@@ -2,18 +2,23 @@
 
 namespace App\Form;
 
-use App\Entity\Speciality;
+use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SpecialityType extends AbstractType
+class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('codename')
             ->add('name')
+            ->add('firstName')
+            ->add('birthdate', DateType::class, ['years'=>range(1900,2021)])
+            ->add('nationality', NationalityType::class)
             ->add('save',SubmitType::class)
         ;
     }
@@ -21,7 +26,7 @@ class SpecialityType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Speciality::class,
+            'data_class' => Contact::class,
         ]);
     }
 }
