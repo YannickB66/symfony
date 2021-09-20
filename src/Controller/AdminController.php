@@ -10,7 +10,6 @@ use App\Entity\Speciality;
 use App\Entity\Target;
 use App\Form\ContactType;
 use App\Form\HideoutType;
-use App\Form\MissionType;
 use App\Form\SpecialityType;
 use App\Form\TargetType;
 use DateTime;
@@ -68,11 +67,6 @@ class AdminController extends AbstractController
     public function newSpeciality(Request $request): Response
     {
 
-        if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 'ok')
-        {
-            return $this->redirectToRoute('admin');
-        }
-
         $speciality = new Speciality();
 
         $form = $this->createForm(SpecialityType::class,$speciality);
@@ -99,10 +93,6 @@ class AdminController extends AbstractController
     #[Route('kgb/admin/agent', name: 'admin_agent')]
     public function newAgent(Request $request): Response
     {
-        if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 'ok')
-        {
-            return $this->redirectToRoute('admin');
-        }
 
         if(isset($_POST['agent']))
         {
@@ -146,10 +136,6 @@ class AdminController extends AbstractController
     #[Route('kgb/admin/contact', name: 'admin_contact')]
     public function newContact(Request $request): Response
     {
-        if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 'ok')
-        {
-            return $this->redirectToRoute('admin');
-        }
 
         $contact = new Contact();
 
@@ -178,10 +164,6 @@ class AdminController extends AbstractController
     #[Route('kgb/admin/target', name: 'admin_target')]
     public function newTarget(Request $request): Response
     {
-        if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 'ok')
-        {
-            return $this->redirectToRoute('admin');
-        }
 
         $target = new Target();
 
@@ -210,10 +192,6 @@ class AdminController extends AbstractController
     #[Route('kgb/admin/hideout', name: 'admin_target')]
     public function newHideout(Request $request): Response
     {
-        if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 'ok')
-        {
-            return $this->redirectToRoute('admin');
-        }
 
         $hideout = new Hideout();
 
@@ -242,10 +220,6 @@ class AdminController extends AbstractController
     #[Route('kgb/admin/mission', name: 'admin_mission')]
     public function newMission(Request $request): Response
     {
-        if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 'ok')
-        {
-            return $this->redirectToRoute('admin');
-        }
 
         if(isset($_POST['mission']))
         {
