@@ -19,27 +19,30 @@
             </div>
         </div>
 
-        {% for agent in agents %}
-
+        {% for speciality in specialitys %}
             <div class="row">
-                <div class="col border">
-                    <a href="/kgb/admin/mod_agent/{{ agent.id }}">{{ agent.name }}</a>
-                </div>
-                <div class="col border">
-                    {{ agent.firstName}}
-                </div>
-                <div class="col border">
-                    {% for speciality in agent.speciality %}
-                        <div> {{ speciality.name }}</div>
-                    {% endfor %}
-                </div>
-            </div>
 
+
+                <div class="col border">
+                    <a href="/kgb/admin/mod_speciality?id={{ speciality.id }}"><div >{{ speciality.name }}</div></a>
+                    {% if item == speciality.id %}
+                        <form method="post">
+                            <input name="speciality[id]" value="{{ speciality.id }}" style="display: none">
+                            <input name="speciality[name]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+
+            </div>
         {% endfor %}
 
         <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin">Retour</a></button>
 
     </div>
+
+
 
 
 {% endblock %}

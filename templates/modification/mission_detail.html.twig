@@ -1,0 +1,208 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Administation{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-lg text-center p-5">
+        <h1>
+            Detail de mission
+        </h1>
+    </div>
+
+
+            <div class="container">
+
+                <div class="row">
+                    <h6 class="col-3">Titre : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=title"><div >{{ mission.title }}</div></a>
+                    {% if field == 'title' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <input name="mission[title]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Description : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=description"><div >{{ mission.description }}</div></a>
+                    {% if field == 'description' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <input name="mission[description]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Nom de code : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=codename"><div >{{ mission.codename }}</div></a>
+                    {% if field == 'codename' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <input name="mission[codename]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Statut : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=statut"><div >{{ mission.statut }}</div></a>
+                    {% if field == 'statut' %}
+                            <form method="post">
+                                <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                                <input name="mission[statut]" type="text">
+                                <button type="submit">ok</button>
+                            </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Type : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=type"><div >{{ mission.type }}</div></a>
+                    {% if field == 'type' %}
+                            <form method="post">
+                                <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                                <input name="mission[type]" type="text">
+                                <button type="submit">ok</button>
+                            </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Date debut : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=dateStart"><div >{{ mission.dateStart|date('d/m/Y') }}</div></a>
+                    {% if field == 'dateStart' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <input name="mission[dateStart]" type="date">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Date fin : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=dateEnd"><div >{{ mission.dateEnd|date('d/m/Y') }}</div></a>
+                    {% if field == 'dateEnd' %}
+                            <form method="post">
+                                <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                                <input name="mission[dateEnd]" type="date">
+                                <button type="submit">ok</button>
+                            </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Pays : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=country"><div >{{ mission.country }}</div></a>
+                    {% if field == 'country' %}
+                            <form method="post">
+                                <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                                <input name="mission[country]" type="text">
+                                <button type="submit">ok</button>
+                            </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Specialité requise : </h6>
+                    <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=requireSpeciality"><div >{{ mission.requireSpeciality.name }}</div></a>
+                    {% if field == 'requireSpeciality' %}
+                            <form method="post">
+                                <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                                <select class="form-select" id="mission_require_speciality" name="mission[requireSpeciality]">
+                                    {% for speciality in specialitys %}
+                                    <option value="{{ speciality.id }}">{{ speciality.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button type="submit">ok</button>
+                            </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Agent : </h6>
+                    {% for agent in mission.agent %}
+                        <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=agent"><div >{{ agent.name }}</div></a>
+                    {% endfor %}
+                    {% if field == 'agent' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <select class="form-select" id="mission_agent" name="mission[agent][]" multiple>
+                                {% for agent in agents %}
+                                    <option value="{{ agent.id }}">{{ agent.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Contact : </h6>
+                    {% for contact in mission.contact %}
+                        <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=contact"><div >{{ contact.name }}</div></a>
+                    {% endfor %}
+                    {% if field == 'contact' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <select class="form-select" id="mission_contact" name="mission[contact][]" multiple>
+                                {% for contact in contacts %}
+                                    <option value="{{ contact.id }}">{{ contact.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Planque : </h6>
+                    {% for hideout in mission.hideout %}
+                        <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=hideout"><div >{{ hideout.adress }}</div></a>
+                    {% endfor %}
+                    {% if field == 'hideout' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <select class="form-select" id="mission_contact" name="mission[contact][]" multiple>
+                                {% for hideout in hideouts %}
+                                    <option value="{{ hideout.id }}">{{ hideout.adress }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <h6 class="col-3">Cible : </h6>
+                    {% for target in mission.target %}
+                        <a class="col" href="/kgb/admin/mod_mission/{{ mission.id }}?field=target"><div >{{ target.name }}</div></a>
+                    {% endfor %}
+                    {% if field == 'target' %}
+                        <form method="post">
+                            <input name="mission[id]" value="{{ mission.id }}" style="display: none">
+                            <select class="form-select" id="mission_contact" name="mission[contact][]" multiple>
+                                {% for target in targets %}
+                                    <option value="{{ target.id }}">{{ target.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin/mod_mission">Retour</a></button>
+
+    </div>
+
+
+{% endblock %}

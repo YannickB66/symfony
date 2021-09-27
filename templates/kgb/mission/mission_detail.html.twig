@@ -1,0 +1,77 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}LES MISSIONS{% endblock %}
+
+{% block body %}
+
+    <div class="container-lg text-center p-5">
+        <h1>
+            Detail de mission
+        </h1>
+    </div>
+
+    <div class="container">
+        <div class="row p-2">
+            <h6 class="col-3">Titre : </h6>
+            <div >{{ mission.title }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Description : </h6>
+            <div >{{ mission.description }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Nom de code : </h6>
+            <div >{{ mission.codename }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Statut : </h6>
+            <div >{{ mission.statut }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Type : </h6>
+            <div >{{ mission.type }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Date debut : </h6>
+            <div >{{ mission.dateStart|date('d/m/Y') }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Date fin : </h6>
+            <div >{{ mission.dateEnd|date('d/m/Y') }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Pays : </h6>
+            <div >{{ mission.country }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Specialité requise : </h6>
+            <div >{{ mission.requireSpeciality.name }}</div>
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Agent : </h6>
+            {% for agent in mission.agent %}
+                <div >{{ agent.name }}</div>
+            {% endfor %}
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Contact : </h6>
+            {% for contact in mission.contact %}
+                <div >{{ contact.name }}</div>
+            {% endfor %}
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Planque : </h6>
+            {% for hideout in mission.hideout %}
+                <div >{{ hideout.adress }}</div>
+            {% endfor %}
+        </div>
+        <div class="row p-2">
+            <h6 class="col-3">Cible : </h6>
+            {% for target in mission.target %}
+                <div >{{ target.name }}</div>
+            {% endfor %}
+        </div>
+    </div>
+    <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/mission">Retour</a></button>
+    </div>
+{% endblock %}

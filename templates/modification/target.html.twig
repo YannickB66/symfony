@@ -1,0 +1,110 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Administation{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-lg text-center p-5">
+        <h1>
+            Modifier une cible
+        </h1>
+    </div>
+
+
+    <div class="container-lg text-center font d1">
+        <div class="grid-name row">
+            <div class="col border ">
+                codename
+            </div>
+            <div class="col border ">
+                Nom
+            </div>
+            <div class="col border ">
+                prenom
+            </div>
+            <div class="col border ">
+                birthdate
+            </div>
+            <div class="col border ">
+                nationalité
+            </div>
+        </div>
+
+        {% for target in targets %}
+            <div class="row">
+
+
+                <div class="col border">
+                    <a href="/kgb/admin/mod_target?field=codename&item={{ target.id }}"><div >{{ target.codename }}</div></a>
+                    {% if field == 'codename' %}
+                        {% if item == target.id %}
+                        <form method="post">
+                            <input name="target[id]" value="{{ target.id }}" style="display: none">
+                            <input name="target[codename]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_target?field=name&item={{ target.id }}"><div >{{ target.name }}</div></a>
+                    {% if field == 'name' %}
+                    {% if item == target.id %}
+                        <form method="post">
+                            <input name="target[id]" value="{{ target.id }}" style="display: none">
+                            <input name="target[name]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_target?field=firstName&item={{ target.id }}"><div >{{ target.firstName }}</div></a>
+                    {% if field == 'firstName' %}
+                    {% if item == target.id %}
+                        <form method="post">
+                            <input name="target[id]" value="{{ target.id }}" style="display: none">
+                            <input name="target[firstName]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_target?field=birthdate&item={{ target.id }}"><div >{{ target.birthdate|date('d/m/Y') }}</div></a>
+                    {% if field == 'birthdate' %}
+                    {% if item == target.id %}
+                        <form method="post">
+                            <input name="target[id]" value="{{ target.id }}" style="display: none">
+                            <input name="target[birthdate]" type="date">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_target?field=nationality&item={{ target.id }}"><div >{{ target.nationality }}</div></a>
+                    {% if field == 'nationality' %}
+                        {% if item == target.id %}
+                            <form method="post">
+                                <input name="target[id]" value="{{ target.id }}" style="display: none">
+                                <input name="target[nationality]" type="text">
+                                <button type="submit">ok</button>
+                            </form>
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+
+            </div>
+        {% endfor %}
+
+        <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin">Retour</a></button>
+
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'basekgb.html.twig' %}
+
+{% block title %}Administation{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-lg text-center p-5">
+        <h1>
+            Modifier une planque
+        </h1>
+    </div>
+
+
+    <div class="container-lg text-center font d1">
+        <div class="grid-name row">
+            <div class="col border ">
+                code
+            </div>
+            <div class="col border ">
+                adress
+            </div>
+            <div class="col border ">
+                country
+            </div>
+            <div class="col border ">
+                type
+            </div>
+        </div>
+
+        {% for hideout in hideouts %}
+            <div class="row">
+
+
+                <div class="col border">
+                    <a href="/kgb/admin/mod_hideout?field=code&item={{ hideout.id }}"><div >{{ hideout.code }}</div></a>
+                    {% if field == 'code' %}
+                        {% if item == hideout.id %}
+                        <form method="post">
+                            <input name="hideout[id]" value="{{ hideout.id }}" style="display: none">
+                            <input name="hideout[code]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_hideout?field=adress&item={{ hideout.id }}"><div >{{ hideout.adress }}</div></a>
+                    {% if field == 'adress' %}
+                    {% if item == hideout.id %}
+                        <form method="post">
+                            <input name="hideout[id]" value="{{ hideout.id }}" style="display: none">
+                            <input name="hideout[adress]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_hideout?field=country&item={{ hideout.id }}"><div >{{ hideout.country }}</div></a>
+                    {% if field == 'country' %}
+                    {% if item == hideout.id %}
+                        <form method="post">
+                            <input name="hideout[id]" value="{{ hideout.id }}" style="display: none">
+                            <input name="hideout[country]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col border">
+                    <a href="/kgb/admin/mod_hideout?field=type&item={{ hideout.id }}"><div >{{ hideout.type }}</div></a>
+                    {% if field == 'type' %}
+                    {% if item == hideout.id %}
+                        <form method="post">
+                            <input name="hideout[id]" value="{{ hideout.id }}" style="display: none">
+                            <input name="hideout[type]" type="text">
+                            <button type="submit">ok</button>
+                        </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+
+
+            </div>
+        {% endfor %}
+
+        <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin">Retour</a></button>
+
+    </div>
+
+
+
+
+{% endblock %}

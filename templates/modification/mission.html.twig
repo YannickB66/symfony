@@ -1,23 +1,25 @@
 {% extends 'basekgb.html.twig' %}
 
-{% block title %}Les missions{% endblock %}
+{% block title %}Administation{% endblock %}
 
 {% block body %}
 
+
     <div class="container-lg text-center p-5">
         <h1>
-            LES MISSIONS
+            Modifier une mission
         </h1>
     </div>
+
 
     <div class="container-lg text-center font d1">
         <div class="grid-name row">
             <div class="col border ">
-                Titre
+                Title
             </div>
 
             <div class="col border ">
-                Nom de code
+                Codename
             </div>
             <div class="col border ">
                 Statut
@@ -26,7 +28,16 @@
                 Type
             </div>
             <div class="col border ">
+                Debut
+            </div>
+            <div class="col border ">
+                Fin
+            </div>
+            <div class="col border ">
                 Pays
+            </div>
+            <div class="col border ">
+                specialité
             </div>
         </div>
 
@@ -34,7 +45,7 @@
             <div class="row">
 
                 <div class="col border">
-                    <a href="/kgb/mission/{{ mission.id }}"><div >{{ mission.title }}</div></a>
+                    <a href="/kgb/admin/mod_mission/{{ mission.id }}"><div >{{ mission.title }}</div></a>
                 </div>
 
                 <div class="col border">
@@ -47,11 +58,22 @@
                     <div >{{ mission.type }}</div>
                 </div>
                 <div class="col border">
+                    <div >{{ mission.dateStart|date('d/m/Y') }}</div>
+                </div>
+                <div class="col border">
+                    <div >{{ mission.dateEnd|date('d/m/Y') }}</div>
+                </div>
+                <div class="col border">
                     <div >{{ mission.country }}</div>
+                </div>
+                <div class="col border">
+                    <div >{{ mission.requireSpeciality.name }}</div>
                 </div>
 
             </div>
         {% endfor %}
+
+        <button style="margin: 20px"><a style="text-decoration: none; color: black" href="/kgb/admin">Retour</a></button>
 
     </div>
 

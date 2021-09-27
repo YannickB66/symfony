@@ -189,7 +189,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('kgb/admin/hideout', name: 'admin_target')]
+    #[Route('kgb/admin/hideout', name: 'admin_hideout')]
     public function newHideout(Request $request): Response
     {
 
@@ -225,8 +225,6 @@ class AdminController extends AbstractController
         {
             $missionD = $_POST['mission'];
 
-            var_dump($missionD);
-
             $mission = new Mission();
 
             $mission->setTitle($missionD['title']);
@@ -236,36 +234,37 @@ class AdminController extends AbstractController
             $mission->setType($missionD['type']);
 
 
-            $dt = $missionD['dateStart']['year'].'-'.$missionD['dateStart']['month'].'-'.$missionD['dateStart']['day'];
-            $dtf = DateTime::createFromFormat('Y-m-d', $dt);
-            $mission->setDateStart($dtf);
-            $dt = $missionD['dateEnd']['year'].'-'.$missionD['dateEnd']['month'].'-'.$missionD['dateEnd']['day'];
-            $dtf = DateTime::createFromFormat('Y-m-d', $dt);
-            $mission->setDateEnd($dtf);
+            $dateTemp = DateTime::createFromFormat('Y-m-d', $missionD['dateStart']);
+            $mission->setDateStart($dateTemp);
+            $dateTemp = DateTime::createFromFormat('Y-m-d', $missionD['dateEnd']);
+            $mission->setDateEnd($dateTemp);
 
             $mission->setCountry($missionD['country']);
 
-
-            foreach ($missionD['agent'] as $temp)
+            if(isset($missionD['agent']))
             {
-                $mission->addAgent($this->getDoctrine()->getRepository(Agent::class)->find((int)$temp));
+                foreach ($missionD['agent'] as $temp) {
+                    $mission->addAgent($this->getDoctrine()->getRepository(Agent::class)->find((int)$temp));
+                }
             }
 
             $mission->setRequireSpeciality($this->getDoctrine()->getRepository(Speciality::class)->find($missionD['requireSpeciality']));
 
-            foreach ($missionD['hideout'] as $temp)
-            {
-                $mission->addHideout($this->getDoctrine()->getRepository(Hideout::class)->find((int)$temp));
+            if(isset($missionD['hideout']))            {
+                foreach ($missionD['hideout'] as $temp)
+                {
+                    $mission->addHideout($this->getDoctrine()->getRepository(Hideout::class)->find((int)$temp));
+                }
             }
-
-            foreach ($missionD['contact'] as $temp)
-            {
-                $mission->addContact($this->getDoctrine()->getRepository(Contact::class)->find((int)$temp));
+            if(isset($missionD['contact'])) {
+                foreach ($missionD['contact'] as $temp) {
+                    $mission->addContact($this->getDoctrine()->getRepository(Contact::class)->find((int)$temp));
+                }
             }
-
-            foreach ($missionD['target'] as $temp)
-            {
-                $mission->addTarget($this->getDoctrine()->getRepository(Target::class)->find((int)$temp));
+            if(isset($missionD['target'])) {
+                foreach ($missionD['target'] as $temp) {
+                    $mission->addTarget($this->getDoctrine()->getRepository(Target::class)->find((int)$temp));
+                }
             }
 
             $entityManager = $this->getDoctrine()->getManager();
