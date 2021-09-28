@@ -3,18 +3,19 @@
 {% block title %}Yannick BRUEL{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <body style="background: lightgray">
+        <style>
+            .fond {  background: #b9b7b7; min-height: 85vh; font: 18px/1.5 sans-serif; }
+        </style>
 
-<div class="example-wrapper">
-    <h1>Les sites de Yannick BRUEL</h1>
+        <div class="fond container-lg centre">
+            <h1 style="padding: 30px;text-align: center">Les sites de Yannick BRUEL</h1>
 
-    Voici les liens :
-    <ul>
-        <li><a href="./kgb">Le site du KGB</a> (Symfony)</li>
-        <li>Bientôt la suite ...</li>
-    </ul>
-</div>
+            <h4>Mes dernières réalisations :</h4>
+            <ul>
+                <li><a href="./kgb">Le site du KGB</a> - Réalisé avec Symfony (front-end/back-end)</li>
+                <li>Bientôt la suite ...</li>
+            </ul>
+        </div>
+    </body>
 {% endblock %}
