@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="HTML5F.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="13"
+     inkscape:cx="17.884615"
+     inkscape:cy="25.038462"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g176"
+       transform="matrix(0.05927622,0,0,0.05927622,0.44145508,0.84615886)">
+      <path
+         d="m 108.4,0 h 23 v 22.8 h 21.2 V 0 h 23 v 69 h -23 V 46 h -21 V 69 H 108.4 M 206,23 H 185.7 V 0 h 63.7 V 23 H 229 V 69 H 206 M 259.5,0 h 24.1 L 298.4,24.3 313.2,0 h 24.1 v 69 h -23 V 34.8 L 298.2,59.6 282.1,34.8 V 69 H 259.5 M 348.7,0 h 23 v 46.2 h 32.6 V 69 h -55.6"
+         id="path155" />
+      <path
+         fill="#e44d26"
+         d="M 107.6,471 74.6,100.6 H 437.4 L 404.4,470.8 255.7,512"
+         id="path157" />
+      <path
+         fill="#f16529"
+         d="M 256,480.5 V 131 H 404.3 L 376,447"
+         id="path159" />
+      <path
+         fill="#ebebeb"
+         d="m 142,176.3 h 114 v 45.4 h -64.2 l 4.2,46.5 h 60 v 45.3 H 154.4 m 2,22.8 H 202 l 3.2,36.3 50.8,13.6 v 47.4 l -93.2,-26"
+         id="path161" />
+      <path
+         fill="#ffffff"
+         d="M 369.6,176.3 H 255.8 v 45.4 h 109.6 m -4.1,46.5 H 255.8 v 45.4 h 56 l -5.3,59 -50.7,13.6 v 47.2 l 93,-25.8"
+         id="path163" />
+    </g>
+  </g>
+</svg>
